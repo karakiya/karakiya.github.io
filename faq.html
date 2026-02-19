@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="icon" href="favicon.ico">
+	<title>よくある質問 - 唐木屋碁盤店&#12304;公式&#12305;</title>
+	<meta name="description"
+		content="碁盤・将棋盤に関するよくある質問。修理にかかる期間や費用の目安、古い盤の鑑定、お手入れ方法など、お客様から多く寄せられるご相談にお答えします。大切な盤の「主治医」として丁寧にお答えします。">
+	<meta name="keywords" content="碁盤修理,削り直し,盤の鑑定,手入れ方法,費用,期間,よくある質問">
+</head>
+
+<body>
+	<header class="header">
+		<div class="header-container">
+			<div class="header-top">
+				<h1><a href="index.html" class="site-title-link">唐木屋碁盤店</a></h1>
+				<button class="menu-trigger" id="menu-trigger">
+					<span></span>
+					<span></span>
+					<span></span>
+				</button>
+			</div>
+
+			<div class="firstimage">
+				<img src="images/3.bmp" alt="メイン写真">
+			</div>
+
+			<nav class="nav-wrapper" id="nav-wrapper">
+				<ul class="nav-list">
+					<li><a href="index.html">ホーム</a></li>
+					<li><a href="about.html">会社概要</a></li>
+					<li><a href="product.html">商品</a></li>
+					<li><a href="faq.html">よくある質問</a></li>
+					<li><a href="contact.html">問い合わせ</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+	<main class="main-content">
+		<div class="container">
+			<section>
+				<h2>よくある質問</h2>
+				<p>お客様から多く寄せられるご質問をまとめました。こちらにない疑問については、お気軽にお問い合わせください。</p>
+
+				<div class="info-card-container">
+
+					<div class="info-card">
+						<div class="info-label">Q. 修理の期間は？</div>
+						<div class="info-value">通常2週間〜1ヶ月程度お時間をいただいております。乾燥や漆の乾き具合を見極めながら丁寧に仕上げるため、お急ぎの場合は事前にご相談ください。
+						</div>
+					</div>
+
+					<div class="info-card">
+						<div class="info-label">Q. 古い盤でも可能？</div>
+						<div class="info-value">はい、可能です。数十年、百年以上前の盤でも、削り直しと太刀盛りによって驚くほど綺麗に蘇ります。大きな割れがある場合は現物拝見後の判断となります。
+						</div>
+					</div>
+
+					<div class="info-card">
+						<div class="info-label">Q. 予算に合わせた提案は？</div>
+						<div class="info-value">もちろんです。ご予算やお使いになる方のレベルに合わせて、最適な組み合わせをご提案いたします。店舗にて実際に触れて選んでいただくことも可能です。
+						</div>
+					</div>
+
+					<div class="info-card">
+						<div class="info-label">Q. 材質の鑑定は？</div>
+						<div class="info-value">お任せください。店主が木目や質感を確認し、材質（榧、桂、新榧など）を鑑定いたします。お写真をお送りいただくか、直接店舗までお持ち込みください。
+						</div>
+					</div>
+
+				</div>
+			</section>
+
+			<section style="text-align: center; margin-top: 50px;">
+				<h2>解決しない場合は</h2>
+				<p>上記以外のご不明点は、お電話またはお問い合わせフォームよりご連絡ください。</p>
+				<div style="margin-top: 30px;">
+					<a href="contact.html" class="submit-btn"
+						style="text-decoration: none; display: inline-block;">お問い合わせフォームへ</a>
+				</div>
+			</section>
+		</div>
+	</main>
+
+	<footer class="footer">
+		<div class="container">
+			<p>&copy; 2026 唐木屋碁盤店</p>
+			<p>〒420-0881 静岡県静岡市葵区北安東5-54-1</p>
+			<p>電話：<a href="tel:054-246-2672" class="footer-link">054-246-2672</a></p>
+			<p>メール：<a href="mailto:karakiya@yahoo.co.jp" class="footer-link">karakiya@yahoo.co.jp</a></p>
+		</div>
+	</footer>
+
+	<div id="page-top" class="page-top">
+		<a href="#">▲</a>
+	</div>
+
+	<script>
+		// まとめて書くことでエラーを防ぎます
+		const trigger = document.getElementById('menu-trigger');
+		const nav = document.getElementById('nav-wrapper');
+		const pageTop = document.getElementById('page-top');
+
+		// ハンバーガーメニューの動き
+		trigger.addEventListener('click', () => {
+			trigger.classList.toggle('active');
+			nav.classList.toggle('active');
+		});
+
+		// 上へ戻るボタンの表示・非表示
+		window.addEventListener('scroll', () => {
+			if (window.scrollY > 400) {
+				pageTop.classList.add('active');
+			} else {
+				pageTop.classList.remove('active');
+			}
+		});
+
+		// ボタンを押したときにスムーズに上に戻る（おまけ機能）
+		pageTop.addEventListener('click', (e) => {
+			e.preventDefault(); // リンクの標準動作をキャンセル
+			window.scrollTo({
+				top: 0,
+				behavior: 'smooth' // スルッとなめらかに戻る
+			});
+		});
+	</script>
+</body>
+
+</html>
+
+</body>
+
+</html>

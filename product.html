@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="icon" href="favicon.ico">
+	<title>商品紹介 - 唐木屋碁盤店&#12304;公式&#12305;</title>
+	<meta name="description"
+		content="唐木屋碁盤店の取扱商品一覧。最高級の本榧碁盤から、初心者の方も扱いやすい将棋盤、蛤碁石、高級碁笥まで豊富に取り揃えております。掲載品以外にもご予算・ご要望に合わせたご提案が可能です。">
+	<meta name="keywords" content="本榧碁盤,将棋盤,蛤碁石,高級碁笥,囲碁道具,将棋道具,販売,静岡">
+</head>
+
+<body>
+
+	<header class="header">
+		<div class="header-container">
+			<div class="header-top">
+				<h1><a href="index.html" class="site-title-link">唐木屋碁盤店</a></h1>
+				<button class="menu-trigger" id="menu-trigger">
+					<span></span>
+					<span></span>
+					<span></span>
+				</button>
+			</div>
+
+			<div class="firstimage">
+				<img src="images/3.bmp" alt="メイン写真">
+			</div>
+
+			<nav class="nav-wrapper" id="nav-wrapper">
+				<ul class="nav-list">
+					<li><a href="index.html">ホーム</a></li>
+					<li><a href="about.html">会社概要</a></li>
+					<li><a href="product.html">商品</a></li>
+					<li><a href="faq.html">よくある質問</a></li>
+					<li><a href="contact.html">問い合わせ</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+	<main class="main-content">
+		<div class="container">
+			<section>
+				<h2>取扱商品のご案内</h2>
+				<p>唐木屋碁盤店では、プロの対局でも使用される最高級品から、ご家庭で気軽に楽しめるものまで、幅広く取り揃えております。</p>
+			</section>
+
+			<section>
+				<h2>囲碁用品</h2>
+				<div class="product-grid">
+					<div class="product-item">
+						<div class="product-img-box"><img src="images/5.jpg" alt="本榧碁盤"></div>
+						<p>碁笥</p>
+					</div>
+					<div class="product-item">
+						<div class="product-img-box"><img src="images/4.jpg" alt="高級碁笥"></div>
+						<p>高級碁笥</p>
+					</div>
+					<div class="product-item">
+						<div class="product-img-box"><img src="images/6.jpg" alt="蛤碁石"></div>
+						<p>蛤碁笥</p>
+					</div>
+				</div>
+				<p class="section-desc">本榧（ほんかや）ならではの打ち味と香りは、対局をより深いものにします。職人自ら一線一線引いた太刀盛りの目盛りをご堪能ください。</p>
+			</section>
+
+			<section>
+				<h2>将棋用品</h2>
+				<div class="product-grid">
+					<div class="product-item">
+						<div class="product-img-box"><img src="images/7.jpeg" alt="本榧将棋盤"></div>
+						<p>本榧将棋盤</p>
+					</div>
+					<div class="product-item">
+						<div class="product-img-box"><img src="images/8.jpeg" alt="駒箱・駒"></div>
+						<p>本榧将棋盤</p>
+					</div>
+					<div class="product-item">
+						<div class="product-img-box"><img src="images/7.jpeg" alt="卓上将棋盤"></div>
+						<p>本榧将棋盤</p>
+					</div>
+				</div>
+				<p class="section-desc">緻密な木目の将棋盤から、手彫りの彫り駒まで。指すたびに心地よい音が響く一品を厳選しています。</p>
+			</section>
+
+			<div class="product-guidance">
+				<p class="guidance-main">
+					ここにご紹介したのは、当店で取り扱う商品のごく一部です。<br>
+					店内には、初心者の方からプロ仕様まで、<br>厚みや木目の異なる盤を常時多数取り揃えております。
+				</p>
+				<p class="guidance-sub">
+					※掲載以外にも、ご予算やご要望に合わせて様々な種類の商品を取り揃えております。<br>
+					お探しのものがございましたら、どうぞお気軽にお問い合わせください。
+				</p>
+			</div>
+
+			<section>
+				<h2>付属品・その他</h2>
+				<p>
+					盤覆い、桐覆い、碁石袋などの保存用品も各種取り扱っております。<br>
+					また、お手持ちの道具の鑑定や、買い替えのご相談も承っております。
+				</p>
+			</section>
+		</div>
+	</main>
+
+	<footer class="footer">
+		<div class="container">
+			<p>&copy; 2026 唐木屋碁盤店</p>
+			<p>〒420-0881 静岡県静岡市葵区北安東5-54-1</p>
+			<p>電話：<a href="tel:054-246-2672" class="footer-link">054-246-2672</a></p>
+			<p>メール：<a href="mailto:karakiya@yahoo.co.jp" class="footer-link">karakiya@yahoo.co.jp</a></p>
+		</div>
+	</footer>
+
+	<div id="page-top" class="page-top">
+		<a href="#">▲</a>
+	</div>
+
+	<script>
+		// まとめて書くことでエラーを防ぎます
+		const trigger = document.getElementById('menu-trigger');
+		const nav = document.getElementById('nav-wrapper');
+		const pageTop = document.getElementById('page-top');
+
+		// ハンバーガーメニューの動き
+		trigger.addEventListener('click', () => {
+			trigger.classList.toggle('active');
+			nav.classList.toggle('active');
+		});
+
+		// 上へ戻るボタンの表示・非表示
+		window.addEventListener('scroll', () => {
+			if (window.scrollY > 400) {
+				pageTop.classList.add('active');
+			} else {
+				pageTop.classList.remove('active');
+			}
+		});
+
+		// ボタンを押したときにスムーズに上に戻る（おまけ機能）
+		pageTop.addEventListener('click', (e) => {
+			e.preventDefault(); // リンクの標準動作をキャンセル
+			window.scrollTo({
+				top: 0,
+				behavior: 'smooth' // スルッとなめらかに戻る
+			});
+		});
+	</script>
+</body>
+
+</html>
+</body>
+
+</html>

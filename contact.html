@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="icon" href="favicon.ico">
+	<title>お問い合わせ - 唐木屋碁盤店&#12304;公式&#12305;</title>
+	<meta name="description"
+		content="唐木屋碁盤店へのお問い合わせはこちら。盤の購入相談、修理の見積もり、お手持ちの盤の鑑定など、お気軽にご連絡ください。静岡市葵区の店舗へのご来店、お電話でのご相談も心よりお待ちしております。">
+	<meta name="keywords" content="お問い合わせ,見積もり,修理依頼,購入相談,アクセス,静岡市,葵区">
+</head>
+
+<body>
+
+	<header class="header">
+		<div class="header-container">
+			<div class="header-top">
+				<h1><a href="index.html" class="site-title-link">唐木屋碁盤店</a></h1>
+				<button class="menu-trigger" id="menu-trigger">
+					<span></span>
+					<span></span>
+					<span></span>
+				</button>
+			</div>
+
+			<div class="firstimage">
+				<img src="images/3.bmp" alt="メイン写真">
+			</div>
+
+			<nav class="nav-wrapper" id="nav-wrapper">
+				<ul class="nav-list">
+					<li><a href="index.html">ホーム</a></li>
+					<li><a href="about.html">会社概要</a></li>
+					<li><a href="product.html">商品</a></li>
+					<li><a href="faq.html">よくある質問</a></li>
+					<li><a href="contact.html">問い合わせ</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+	<main class="main-content">
+		<div class="container">
+			<section class="contact-form-section">
+				<h2>お問い合わせ</h2>
+				<p>商品のご質問、盤の修理・削り直しのお見積りなど、お気軽にお問い合わせください。</p>
+				<br>
+
+				<form action="#" method="post">
+					<div class="form-group">
+						<label>お名前 <span class="required">必須</span></label>
+						<input type="text" name="name" placeholder="例：静岡 太郎" required>
+					</div>
+
+					<div class="form-group">
+						<label>メールアドレス <span class="required">必須</span></label>
+						<input type="email" name="email" placeholder="example@mail.com" required>
+					</div>
+
+					<div class="form-item">
+						<label for="message">お問い合わせ内容:</label>
+						<textarea id="message" name="message" rows="6" placeholder="修理の見積もり希望、商品の在庫確認など"></textarea>
+
+						<p class="form-guidance">
+							※修理のお見積りをご希望の方は、盤の状態がわかるお写真を別途メールに添付してお送りください（<a
+								href="mailto:karakiya@yahoo.co.jp">karakiya@yahoo.co.jp</a>）
+						</p>
+					</div>
+
+					<div class="form-submit">
+						<button type="submit" class="submit-btn">送信する</button>
+					</div>
+				</form>
+			</section>
+		</div>
+	</main>
+
+	<footer class="footer">
+		<div class="container">
+			<p>&copy; 2026 唐木屋碁盤店</p>
+			<p>〒420-0881 静岡県静岡市葵区北安東5-54-1</p>
+			<p>電話：<a href="tel:054-246-2672" class="footer-link">054-246-2672</a></p>
+			<p>メール：<a href="mailto:karakiya@yahoo.co.jp" class="footer-link">karakiya@yahoo.co.jp</a></p>
+		</div>
+	</footer>
+
+	<div id="page-top" class="page-top">
+		<a href="#">▲</a>
+	</div>
+
+	<script>
+		// まとめて書くことでエラーを防ぎます
+		const trigger = document.getElementById('menu-trigger');
+		const nav = document.getElementById('nav-wrapper');
+		const pageTop = document.getElementById('page-top');
+
+		// ハンバーガーメニューの動き
+		trigger.addEventListener('click', () => {
+			trigger.classList.toggle('active');
+			nav.classList.toggle('active');
+		});
+
+		// 上へ戻るボタンの表示・非表示
+		window.addEventListener('scroll', () => {
+			if (window.scrollY > 400) {
+				pageTop.classList.add('active');
+			} else {
+				pageTop.classList.remove('active');
+			}
+		});
+
+		// ボタンを押したときにスムーズに上に戻る（おまけ機能）
+		pageTop.addEventListener('click', (e) => {
+			e.preventDefault(); // リンクの標準動作をキャンセル
+			window.scrollTo({
+				top: 0,
+				behavior: 'smooth' // スルッとなめらかに戻る
+			});
+		});
+	</script>
+</body>
+
+</html>
+
+</body>
+
+</html>

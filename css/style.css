@@ -1,0 +1,952 @@
+@charset "UTF-8";
+
+/* --- 基本リセット --- */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #f0ffff;
+	color: #8f6552;
+	font-family: "Sawarabi Mincho", serif;
+	line-height: 1.6;
+}
+
+/* --- ヘッダー・ナビゲーション --- */
+.header {
+	background-color: #e6e6fa;
+	width: 100%;
+}
+
+.header-top {
+	display: flex;
+	justify-content: center;
+	/* PCでは中央寄せ */
+	align-items: center;
+	padding: 20px;
+	max-width: 1100px;
+	margin: 0 auto;
+	position: relative;
+}
+
+h1 {
+	font-size: clamp(30px, 5vw, 60px);
+	color: #a52a2a;
+}
+
+/* ハンバーガーボタン（PCでは隠す） */
+.menu-trigger {
+	display: none;
+}
+
+.nav-list {
+	display: flex;
+	justify-content: center;
+	list-style: none;
+	gap: 20px;
+	padding: 10px 0 30px;
+}
+
+.nav-list a {
+	text-decoration: none;
+	color: #fff;
+	background-color: #a52a2a;
+	padding: 10px 25px;
+	border-radius: 8px;
+	font-weight: bold;
+	transition: 0.3s;
+}
+
+.nav-list a:hover {
+	background-color: #E7DA66;
+	color: #a52a2a;
+}
+
+/* --- メイン画像 --- */
+.firstimage {
+	width: 100%;
+	text-align: center;
+	padding: 20px 0;
+}
+
+.firstimage img {
+	width: 80%;
+	max-width: 1000px;
+	height: auto;
+	border-radius: 4px;
+}
+
+/* --- コンテンツエリア --- */
+.container {
+	max-width: 1000px;
+	margin: 0 auto;
+	padding: 0 20px;
+}
+
+h2 {
+	color: #008b8b;
+	border-left: 12px solid #98fb98;
+	padding: 5px 20px;
+	margin: 40px 0 20px;
+	background: rgba(152, 251, 152, 0.1);
+}
+
+/* --- 商品グリッド --- */
+.product-grid {
+	display: flex;
+	gap: 15px;
+	overflow-x: auto;
+	padding: 20px 0;
+}
+
+.product-item {
+	flex: 0 0 180px;
+	text-align: center;
+}
+
+.product-img-box {
+	width: 100%;
+	height: 140px;
+	border: 1px solid #ddd;
+	overflow: hidden;
+}
+
+.product-img-box img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+/* --- 店主の思い（横書き・上下構成） --- */
+.owner-message-content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 40px;
+	padding: 60px 0;
+}
+
+.message-catch {
+	text-align: center;
+	font-size: clamp(18px, 4vw, 26px);
+	font-weight: bold;
+	color: #a52a2a;
+	border-top: 1px solid #a52a2a;
+	border-bottom: 1px solid #a52a2a;
+	padding: 30px 20px;
+}
+
+.horizontal-text h2 {
+	background: linear-gradient(transparent 60%, #e0ffe0 60%);
+	border-left: none;
+}
+
+/* --- フッター --- */
+.footer {
+	background-color: #e6e6fa;
+	text-align: center;
+	padding: 40px 0;
+	margin-top: 60px;
+}
+
+/* --- スマホ対応 (600px以下) --- */
+@media (max-width: 600px) {
+	.header-top {
+		justify-content: space-between;
+		/* ロゴは左、ボタンは右 */
+	}
+
+	.menu-trigger {
+		display: block;
+		width: 40px;
+		height: 30px;
+		background: none;
+		border: none;
+		position: relative;
+	}
+
+	.menu-trigger span {
+		position: absolute;
+		left: 0;
+		width: 100%;
+		height: 4px;
+		background: #a52a2a;
+		border-radius: 4px;
+		transition: 0.4s;
+	}
+
+	.menu-trigger span:nth-child(1) {
+		top: 0;
+	}
+
+	.menu-trigger span:nth-child(2) {
+		top: 13px;
+	}
+
+	.menu-trigger span:nth-child(3) {
+		top: 26px;
+	}
+
+	.menu-trigger.active span:nth-child(1) {
+		transform: translateY(13px) rotate(-45deg);
+	}
+
+	.menu-trigger.active span:nth-child(2) {
+		opacity: 0;
+	}
+
+	.menu-trigger.active span:nth-child(3) {
+		transform: translateY(-13px) rotate(45deg);
+	}
+
+	.nav-wrapper {
+		display: none;
+		width: 100%;
+	}
+
+	.nav-wrapper.active {
+		display: block;
+	}
+
+	.nav-list {
+		flex-direction: column;
+		padding: 10px 20px;
+	}
+
+	.nav-list a {
+		display: block;
+		text-align: center;
+	}
+
+	.firstimage img {
+		width: 95%;
+		/* スマホでは端まで広げる */
+	}
+
+	.product-grid {
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+}
+
+/* --- お問い合わせフォーム全体の調整 --- */
+.contact-form-section {
+	background: #fff;
+	padding: 30px;
+	border-radius: 10px;
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+	max-width: 800px;
+	/* PCで見ても広がりすぎないように制限 */
+	margin: 0 auto;
+	/* 中央に寄せる */
+}
+
+/* --- 会社概要：ゆったりとしたえんじ色の表 --- */
+.info-table-container {
+	margin: 50px 0;
+	/* 前後の余白を大きくしてゆとりを出す */
+}
+
+.info-table {
+	width: 100%;
+	border-collapse: separate;
+	/* 枠線を少し離す設定（お好みで） */
+	border-spacing: 0;
+	border: 2px solid #a52a2a;
+	background-color: #fff;
+	font-family: "Sawarabi Mincho", "Noto Serif JP", serif;
+	/* 明朝体で格式高く */
+}
+
+.info-table th {
+	width: 30%;
+	background-color: #a52a2a;
+	color: #fff;
+	padding: 25px 20px;
+	/* ★上下の余白を25pxに広げてゆったりさせる */
+	text-align: left;
+	border-bottom: 1px solid #fff;
+	letter-spacing: 0.1em;
+	/* 漢字の間隔を少し広げる */
+	font-weight: 500;
+}
+
+.info-table td {
+	padding: 25px 30px;
+	/* ★左右の余白を30pxにして、文字を読みやすく */
+	border-bottom: 1px solid #a52a2a;
+	color: #333;
+	line-height: 2;
+	/* 行間を広げて「読みやすさ」を重視 */
+	letter-spacing: 0.05em;
+	/* 漢字の印象を整える */
+}
+
+/* 最後の行の線は消す */
+.info-table tr:last-child th,
+.info-table tr:last-child td {
+	border-bottom: none;
+}
+
+/* スマホ用調整 */
+@media (max-width: 600px) {
+	.info-table th {
+		width: 35%;
+		padding: 20px 10px;
+		font-size: 15px;
+	}
+
+	.info-table td {
+		padding: 20px 15px;
+		font-size: 15px;
+	}
+}
+
+/* 必須ラベル */
+.required {
+	background: #a52a2a;
+	color: #fff;
+	font-size: 12px;
+	padding: 2px 6px;
+	border-radius: 3px;
+	margin-left: 5px;
+}
+
+/* 送信ボタンの装飾 */
+.submit-btn {
+	background-color: #a52a2a;
+	color: #fff;
+	padding: 15px 60px;
+	font-size: 18px;
+	font-weight: bold;
+	border: none;
+	border-radius: 8px;
+	cursor: pointer;
+	transition: 0.3s;
+}
+
+.submit-btn:hover {
+	background-color: #E7DA66;
+	color: #a52a2a;
+}
+
+/* スマホ用調整 */
+@media (max-width: 600px) {
+	.contact-form-section {
+		padding: 20px 15px;
+	}
+
+	.submit-btn {
+		width: 100%;
+		/* スマホではボタンを横いっぱいに */
+	}
+}
+
+/* --- お問い合わせフォームの完全修正 --- */
+.contact-form-section {
+	background-color: #ffffff;
+	/* フォームの背景を白くして読みやすく */
+	padding: 30px;
+	border-radius: 10px;
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+	margin: 40px auto;
+}
+
+/* 各入力項目のまとまり */
+.form-group {
+	margin-bottom: 25px;
+	text-align: left;
+	/* 文字を左寄せに固定 */
+}
+
+/* ラベル（お名前・メールなどの文字） */
+.form-group label {
+	display: block;
+	/* ★重要：これを入れると入力欄が強制的に下へ移動します */
+	font-weight: bold;
+	color: #8f6552;
+	margin-bottom: 8px;
+	font-size: 16px;
+}
+
+/* 入力欄（枠線）のスタイル */
+.form-group input,
+.form-group textarea {
+	width: 100%;
+	/* 横幅いっぱいに広げる */
+	padding: 12px;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	font-size: 16px;
+	font-family: inherit;
+	box-sizing: border-box;
+	/* ★重要：パディングが横幅を突き破るのを防ぎます */
+	display: block;
+}
+
+/* 必須マーク */
+.required {
+	background-color: #a52a2a;
+	color: #fff;
+	font-size: 12px;
+	padding: 2px 6px;
+	border-radius: 3px;
+	margin-left: 5px;
+	vertical-align: middle;
+}
+
+/* 送信ボタン */
+.form-submit {
+	text-align: center;
+	margin-top: 30px;
+}
+
+.submit-btn {
+	background-color: #a52a2a;
+	color: #fff;
+	padding: 15px 80px;
+	font-size: 18px;
+	font-weight: bold;
+	border: none;
+	border-radius: 8px;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+	background-color: #E7DA66;
+	color: #a52a2a;
+}
+
+/* スマホ用 (600px以下) の調整 */
+@media (max-width: 600px) {
+	.contact-form-section {
+		padding: 20px 15px;
+	}
+
+	.submit-btn {
+		width: 100%;
+		/* スマホではボタンを画面いっぱいに */
+	}
+}
+
+/* --- ナビゲーション全体の復元と調整 --- */
+
+/* PC用：ナビゲーションの包み（背景を紫に固定） */
+.nav-wrapper {
+	background-color: #e6e6fa;
+	width: 100%;
+	text-align: center;
+	display: block;
+	/* PCでは常に表示 */
+}
+
+/* ナビゲーションリスト：中央寄せ */
+.nav-list {
+	display: flex;
+	justify-content: center;
+	list-style: none;
+	flex-wrap: wrap;
+	padding: 20px 0 40px 0;
+	/* 上下の余白を戻しました */
+	gap: 30px;
+	/* ボタン同士の間隔を広め（30px）に復元 */
+}
+
+/* ボタンの見た目：以前のサイズと色に完全復元 */
+.nav-list a {
+	text-decoration: none;
+	color: #fff;
+	background-color: #a52a2a;
+	/* えんじ色 */
+	font-size: 26px;
+	/* 文字を大きく（26px）戻しました */
+	font-weight: bold;
+	padding: 12px 35px;
+	/* ふっくらしたパディングを復元 */
+	border-radius: 8px;
+	display: inline-block;
+	transition: all 0.3s ease;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* ホバー時の動き（黄色に変わる） */
+.nav-list a:hover {
+	background-color: #E7DA66;
+	color: #a52a2a;
+	transform: translateY(-5px);
+	box-shadow: 0 8px 15px rgba(0, 0, 0, 0.25);
+}
+
+/* --- スマホ用 (600px以下) の設定 --- */
+@media (max-width: 600px) {
+
+	/* PC用の大きな余白をスマホでは詰める */
+	.nav-list {
+		padding: 10px 20px 20px;
+		gap: 10px;
+		flex-direction: column;
+		/* スマホでは縦並び */
+	}
+
+	/* スマホではボタンを少し小さくし、画面に収める */
+	.nav-list a {
+		font-size: 20px;
+		padding: 12px 20px;
+		width: 100%;
+		text-align: center;
+	}
+
+	/* JavaScriptで制御するための設定 */
+	.nav-wrapper {
+		display: none;
+		/* 初期状態は隠す */
+	}
+
+	.nav-wrapper.active {
+		display: block;
+		/* ボタン押下時に表示 */
+	}
+}
+
+/* --- 会社概要のえんじ色の表 --- */
+.info-table-container {
+	margin: 30px 0;
+	overflow-x: auto;
+	/* スマホで表がはみ出た時に横スクロールできるようにする */
+}
+
+.info-table {
+	width: 100%;
+	border-collapse: collapse;
+	border: 2px solid #a52a2a;
+	/* 外枠をえんじ色に */
+	background-color: #fff;
+}
+
+.info-table th {
+	width: 30%;
+	background-color: #a52a2a;
+	/* 見出しをえんじ色に */
+	color: #fff;
+	/* 文字は白 */
+	padding: 15px;
+	text-align: left;
+	border: 1px solid #fff;
+	/* 境目を白線でスッキリさせる */
+	white-space: nowrap;
+}
+
+.info-table td {
+	padding: 15px;
+	border: 1px solid #a52a2a;
+	/* セルの区切りもえんじ色 */
+	color: #333;
+	line-height: 1.8;
+}
+
+/* スマホ用調整（600px以下） */
+@media (max-width: 600px) {
+
+	.info-table th,
+	.info-table td {
+		padding: 12px 10px;
+		font-size: 15px;
+	}
+
+	.info-table th {
+		width: 35%;
+		/* スマホでは見出し幅を少し広げる */
+	}
+}
+
+/* --- 会社概要：丸みのある独立したカードスタイル --- */
+.info-card-container {
+	margin: 40px 0;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	/* ★カードとカードの間の隙間 */
+}
+
+.info-card {
+	display: flex;
+	align-items: stretch;
+	border: 2px solid #a52a2a;
+	/* えんじ色の外枠 */
+	border-radius: 15px;
+	/* ★全体の角に丸みをつける */
+	overflow: hidden;
+	/* 角の丸みに合わせて中身を切り抜く */
+	background-color: #fff;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+	/* ほんのり影をつけて立体的に */
+}
+
+/* 左側のえんじ色のラベル部分 */
+.info-label {
+	background-color: #a52a2a;
+	color: #fff;
+	width: 30%;
+	padding: 20px;
+	display: flex;
+	align-items: center;
+	font-weight: bold;
+	letter-spacing: 0.1em;
+	min-width: 120px;
+}
+
+/* 右側の内容部分 */
+.info-value {
+	flex: 1;
+	padding: 20px 30px;
+	color: #333;
+	line-height: 1.8;
+	background-color: #fff;
+	display: flex;
+	align-items: center;
+}
+
+/* スマホ用調整 */
+@media (max-width: 600px) {
+	.info-card {
+		flex-direction: column;
+		/* スマホではラベルを上、内容を下にする */
+		border-radius: 12px;
+	}
+
+	.info-label {
+		width: 100%;
+		padding: 10px 20px;
+		font-size: 15px;
+	}
+
+	.info-value {
+		padding: 15px 20px;
+		font-size: 15px;
+	}
+}
+
+/* --- 画像のホバーアクション復活 --- */
+.product-item {
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+	/* アニメーションを滑らかに */
+	cursor: pointer;
+}
+
+.product-item:hover {
+	transform: translateY(-10px);
+	/* ★上に10px浮かせる */
+}
+
+.product-img-box {
+	overflow: hidden;
+	/* はみ出し防止 */
+	border-radius: 8px;
+	/* 画像の角も少し丸める */
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-img-box img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform 0.5s ease;
+	/* 中の画像も少し動かす演出 */
+}
+
+.product-item:hover .product-img-box img {
+	transform: scale(1.1);
+	/* ★マウスを乗せた時に画像が少しズームされる */
+}
+
+/* --- ナビゲーション順序の固定（共通） --- */
+.header-container {
+	display: flex;
+	flex-direction: column;
+}
+
+.header-top {
+	order: 1;
+}
+
+.firstimage {
+	order: 2;
+}
+
+.nav-wrapper {
+	order: 3;
+}
+
+/* スマホ用並び順の変更 */
+@media (max-width: 600px) {
+	.firstimage {
+		order: 4;
+	}
+
+	/* スマホでは画像は一番下 */
+}
+
+/* --- スマホ用 (600px以下) の修正 --- */
+@media (max-width: 600px) {
+	.header-top {
+		display: flex;
+		justify-content: space-between;
+		/* ★店名を左、ボタンを右に引き離す */
+		align-items: center;
+		/* ★上下中央を揃える */
+		padding: 15px 20px;
+		/* ★左右に少し余白を作る */
+		width: 100%;
+		/* ★横幅いっぱいに広げる */
+		box-sizing: border-box;
+		/* ★余白を含めて画面内に収める */
+	}
+
+	h1 {
+		font-size: 24px;
+		/* スマホでは文字を少しだけ小さくして場所を確保 */
+		margin: 0;
+		text-align: left;
+		/* 左寄せに固定 */
+	}
+
+	.menu-trigger {
+		margin-left: auto;
+		/* 念のため、右側に強制的に寄せる */
+	}
+}
+
+/* --- サイトタイトル（唐木屋碁盤店）の装飾 --- */
+.site-title-link {
+	text-decoration: none !important;
+	/* ★下線を絶対に消す */
+	color: #a52a2a !important;
+	/* ★えんじ色を強制的に適用 */
+	font-family: "Sawarabi Mincho", serif;
+	font-weight: bold;
+	letter-spacing: 0.15em;
+	/* 文字間隔を広げておしゃれに */
+	transition: color 0.3s ease;
+}
+
+/* ホバーした時だけ色を変える（お好みで） */
+.site-title-link:hover {
+	color: #E7DA66 !important;
+	/* マウスを乗せると少し明るく */
+	text-decoration: none !important;
+}
+
+/* h1自体の余白などを調整 */
+h1 {
+	margin: 0;
+	line-height: 1.2;
+}
+
+/* --- 上へ戻るボタンのデザイン --- */
+.page-top {
+	position: fixed;
+	right: 20px;
+	bottom: 20px;
+	z-index: 100;
+	opacity: 0;
+	/* 最初は透明にして隠す */
+	visibility: hidden;
+	/* クリックできないようにする */
+	transition: 0.3s;
+	/* ふわっと出すためのアニメーション */
+}
+
+/* ボタンが表示された時の状態 */
+.page-top.active {
+	opacity: 1;
+	visibility: visible;
+}
+
+.page-top a {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #a52a2a;
+	/* えんじ色 */
+	color: #fff;
+	width: 50px;
+	height: 50px;
+	text-decoration: none;
+	border-radius: 50%;
+	/* 丸くする */
+	font-size: 20px;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+	transition: 0.3s;
+}
+
+.page-top a:hover {
+	background: #E7DA66;
+	/* ホバー時は黄色 */
+	color: #a52a2a;
+	transform: translateY(-5px);
+	/* 少し浮く動き */
+}
+
+/* フッター内のリンクを見やすくする */
+.footer-link {
+	color: inherit;
+	/* 親要素（pタグ）の色を引き継ぐ */
+	text-decoration: none;
+	/* 下線を消す */
+	transition: opacity 0.3s;
+}
+
+.footer-link:hover {
+	opacity: 0.7;
+	/* 触った時に少し薄くして反応を出す */
+}
+
+/* スマホではタップしやすいように少しだけ文字を強調してもOK */
+@media (max-width: 600px) {
+	.footer-link {
+		font-weight: bold;
+		text-decoration: underline;
+		/* スマホのみ「押せる」ことがわかるよう下線を出しても親切です */
+	}
+}
+
+/* --- 商品紹介下の補足テキスト --- */
+.product-guidance {
+	text-align: center;
+	margin: 40px auto;
+	padding: 30px;
+	background-color: #f9f9f9;
+	/* ほんのりグレーで区切る */
+	border-radius: 10px;
+	/* 角を丸くして親しみやすく */
+	max-width: 800px;
+}
+
+.guidance-main {
+	font-size: 18px;
+	font-weight: bold;
+	color: #333;
+	line-height: 1.8;
+	margin-bottom: 15px;
+}
+
+.guidance-sub {
+	font-size: 15px;
+	color: #666;
+	line-height: 1.6;
+	margin-bottom: 25px;
+}
+
+.guidance-button .btn-text {
+	color: #a52a2a;
+	/* えんじ色 */
+	text-decoration: none;
+	font-weight: bold;
+	border-bottom: 2px solid #a52a2a;
+	padding-bottom: 5px;
+	transition: 0.3s;
+}
+
+.guidance-button .btn-text:hover {
+	color: #E7DA66;
+	border-bottom-color: #E7DA66;
+}
+
+/* スマホ用調整 */
+@media (max-width: 600px) {
+	.guidance-main {
+		font-size: 16px;
+	}
+
+	.guidance-sub {
+		font-size: 14px;
+	}
+}
+
+/* お問い合わせフォーム内の案内テキスト */
+.form-guidance {
+	margin-top: 10px;
+	padding: 15px;
+	background-color: #fff9f9;
+	/* ほんのり赤みがかった背景で目を引く */
+	border: 1px solid #eecaca;
+	/* えんじ色に近い薄い枠線 */
+	font-size: 14px;
+	line-height: 1.6;
+	color: #555;
+	border-radius: 5px;
+}
+
+.form-guidance a {
+	color: #a52a2a;
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+.form-guidance a:hover {
+	color: #E7DA66;
+}
+
+/* フォーム全体のレイアウト調整 */
+.contact-form {
+	max-width: 600px;
+	/* フォームが広がりすぎないように */
+	margin: 0 auto;
+	/* 中央寄せ */
+	text-align: left;
+}
+
+.form-item {
+	margin-bottom: 25px;
+	display: flex;
+	flex-direction: column;
+	/* ラベルと入力を強制的に縦並びにする */
+}
+
+.form-item label {
+	font-weight: bold;
+	margin-bottom: 8px;
+	display: block;
+}
+
+/* 入力欄（名前・メール）とテキストエリアの共通設定 */
+.form-item input[type="text"],
+.form-item input[type="email"],
+.form-item textarea {
+	width: 100%;
+	/* 横幅いっぱいにする */
+	padding: 12px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	box-sizing: border-box;
+	/* 枠線を含めて100%にする（はみ出し防止） */
+	font-size: 16px;
+}
+
+/* テキストエリア（お問い合わせ内容）の高さ固定 */
+.form-item textarea {
+	min-height: 150px;
+	resize: vertical;
+	/* ユーザーが縦方向にだけ伸ばせるようにする */
+}
+
+/* 送信ボタンの調整 */
+.submit-btn {
+	width: 100%;
+	padding: 15px;
+	background-color: #a52a2a;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	font-size: 18px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: 0.3s;
+}
+
+.submit-btn:hover {
+	background-color: #8b0000;
+}

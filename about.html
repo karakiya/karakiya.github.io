@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="icon" href="favicon.ico">
+	<title>会社概要 - 唐木屋碁盤店&#12304;公式&#12305;</title>
+	<meta name="description"
+		content="唐木屋碁盤店の会社概要・店主のご紹介。静岡で親子二代、70年以上にわたり盤づくりに向き合ってきました。受け継がれてきた伝統技術と、一石一指しに込める職人のこだわりについてお伝えします。">
+	<meta name="keywords" content="唐木屋碁盤店,静岡,伝統工芸,職人,太刀盛り,碁盤製作,二代目,老舗">
+</head>
+
+<body>
+
+	<header class="header">
+		<div class="header-container">
+			<div class="header-top">
+				<h1><a href="index.html" class="site-title-link">唐木屋碁盤店</a></h1>
+				<button class="menu-trigger" id="menu-trigger">
+					<span></span>
+					<span></span>
+					<span></span>
+				</button>
+			</div>
+
+			<div class="firstimage">
+				<img src="images/3.bmp" alt="メイン写真">
+			</div>
+
+			<nav class="nav-wrapper" id="nav-wrapper">
+				<ul class="nav-list">
+					<li><a href="index.html">ホーム</a></li>
+					<li><a href="about.html">会社概要</a></li>
+					<li><a href="product.html">商品</a></li>
+					<li><a href="faq.html">よくある質問</a></li>
+					<li><a href="contact.html">問い合わせ</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+	<main class="main-content">
+		<div class="container">
+			<section>
+				<h2>会社概要</h2>
+				<div class="info-card-container">
+					<div class="info-card">
+						<div class="info-label">会社名</div>
+						<div class="info-value">唐木屋碁盤店</div>
+					</div>
+
+					<div class="info-card">
+						<div class="info-label">設立</div>
+						<div class="info-value">昭和26年</div>
+					</div>
+
+					<div class="info-card">
+						<div class="info-label">代表者</div>
+						<div class="info-value">井村 保孝</div>
+					</div>
+
+					<div class="info-card">
+						<div class="info-label">所在地</div>
+						<div class="info-value">
+							〒420-0886<br>
+							静岡県静岡市葵区大岩2-7-11
+						</div>
+					</div>
+
+					<div class="info-card">
+						<div class="info-label">事業内容</div>
+						<div class="info-value">囲碁・将棋用具の製造、販売、修理メンテナンス</div>
+					</div>
+				</div>
+			</section>
+			<section>
+				<h2>アクセス</h2>
+				<div class="map-container">
+					<p>静岡市葵区大岩、城北公園のほど近くに店舗を構えております。</p>
+					<p>バス：しずてつジャストライン・大浜麻機線「記念碑前」より徒歩3分</p>
+					<p>お車：店舗前に駐車場もございます</p>
+					<div class="map-box" style="margin-top:20px;">
+						<iframe
+							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3267.3123456789!2d138.38123456789!3d34.99123456789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzTCsDU5JzI4LjQiTiAxMzhCsDIyJzUyLjQiRQ!5e0!3m2!1sja!2sjp!4v1234567890"
+							width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy">
+						</iframe>
+					</div>
+				</div>
+			</section>
+		</div>
+	</main>
+
+	<footer class="footer">
+		<div class="container">
+			<p>&copy; 2026 唐木屋碁盤店</p>
+			<p>〒420-0881 静岡県静岡市葵区北安東5-54-1</p>
+			<p>電話：<a href="tel:054-246-2672" class="footer-link">054-246-2672</a></p>
+			<p>メール：<a href="mailto:karakiya@yahoo.co.jp" class="footer-link">karakiya@yahoo.co.jp</a></p>
+		</div>
+	</footer>
+
+	<div id="page-top" class="page-top">
+		<a href="#">▲</a>
+	</div>
+
+	<script>
+		// まとめて書くことでエラーを防ぎます
+		const trigger = document.getElementById('menu-trigger');
+		const nav = document.getElementById('nav-wrapper');
+		const pageTop = document.getElementById('page-top');
+
+		// ハンバーガーメニューの動き
+		trigger.addEventListener('click', () => {
+			trigger.classList.toggle('active');
+			nav.classList.toggle('active');
+		});
+
+		// 上へ戻るボタンの表示・非表示
+		window.addEventListener('scroll', () => {
+			if (window.scrollY > 400) {
+				pageTop.classList.add('active');
+			} else {
+				pageTop.classList.remove('active');
+			}
+		});
+
+		// ボタンを押したときにスムーズに上に戻る（おまけ機能）
+		pageTop.addEventListener('click', (e) => {
+			e.preventDefault(); // リンクの標準動作をキャンセル
+			window.scrollTo({
+				top: 0,
+				behavior: 'smooth' // スルッとなめらかに戻る
+			});
+		});
+	</script>
+</body>
+
+</html>
+</body>
+
+</html>
