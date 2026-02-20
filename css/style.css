@@ -951,106 +951,162 @@ h1 {
 	background-color: #8b0000;
 }
 
-/* 商品案内セクション全体のレイアウト */
-.product-intro {
-	padding: 80px 0;
-	background-color: #fcfaf5;
-	/* わずかに和紙のような温かみのある白 */
+/* セクション全体の装飾 */
+.koban-table-section {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    font-family: "Hiragino Mincho ProN", "MS Mincho", serif;
+}
+
+.koban-table-title {
+    color: #5d4037;
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.koban-table td {
+    padding: 20px 15px;
+    border-bottom: 1px dotted #d7ccc8;
+    line-height: 1.6;
+    color: #333;
+}
+
+.category-name {
+    font-weight: bold;
+    color: #8d6e63;
+    white-space: nowrap; /* カテゴリ名が途中で改行されないように */
+}
+
+/* 行のホバー（マウスを乗せた時）の演出 */
+.koban-table tbody tr:hover {
+    background-color: #fffdf0;
+}
+
+/* スマホ対応（レスポンシブ） */
+@media screen and (max-width: 640px) {
+    .koban-table {
+        display: block; /* 表をブロック要素に */
+    }
+    .koban-table thead {
+        display: none; /* 見出しを非表示に（スマホでは縦に並べるため） */
+    }
+    .koban-table tbody tr {
+        display: block;
+        border-bottom: 2px solid #e0d8c0;
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+    }
+    .koban-table td {
+        display: block;
+        border-bottom: none;
+        padding: 5px 10px;
+    }
+    .category-name {
+        background-color: #f8f4e6;
+        padding: 10px !important;
+        margin-bottom: 10px;
+        font-size: 1.1rem;
+    }
+    /* スマホ時にラベルを擬似的に表示させたい場合はここに追加 */
+}
+
+/* セクション全体の装飾 */
+.koban-selection {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 0 20px;
+    font-family: "Hiragino Mincho ProN", serif;
 }
 
 .section-title {
-	text-align: center;
-	margin-bottom: 30px;
-	font-size: 2rem;
-	color: #4a3520;
-	/* 濃い木目調の茶色 */
-	position: relative;
-	padding-bottom: 15px;
+    text-align: center;
+    color: #4e342e;
+    margin-bottom: 40px;
+    font-size: 1.8rem;
 }
 
-.section-title::after {
-	content: '';
-	position: absolute;
-	bottom: 0;
-	left: 50%;
-	transform: translateX(-50%);
-	width: 60px;
-	height: 3px;
-	background-color: #8b4513;
+/* 3つ並べるためのグリッド設定 */
+.koban-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3等分 */
+    gap: 20px; /* □同士の隙間 */
 }
 
-.intro-text {
-	max-width: 800px;
-	margin: 0 auto 50px;
-	text-align: center;
-	line-height: 1.8;
-	color: #333;
+/* 各カード（□）の装飾 */
+.koban-card {
+    background: #fff;
+    border: 1px solid #e0d8c0;
+    border-radius: 8px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+    overflow: hidden;
 }
 
-/* カードレイアウト（レスポンシブ対応） */
-.product-grid {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-	gap: 30px;
-	margin-top: 20px;
+.koban-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
-.product-card {
-	background: #fff;
-	border: 1px solid #e0d8c8;
-	border-radius: 4px;
-	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-	transition: transform 0.3s ease;
+/* タグ（左上のラベル） */
+.card-tag {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 5px 15px;
+    font-size: 0.8rem;
+    color: #fff;
+    font-weight: bold;
 }
+.tag-gold   { background: #b8860b; }
+.tag-silver { background: #708090; }
+.tag-bronze { background: #8b4513; }
 
-.product-card:hover {
-	transform: translateY(-5px);
-}
-
+/* カードの中身 */
 .card-content {
-	padding: 30px;
+    padding: 40px 20px 20px;
+    flex-grow: 1;
 }
 
-.card-content h3 {
-	font-size: 1.4rem;
-	color: #8b4513;
-	margin-bottom: 20px;
-	border-left: 4px solid #8b4513;
-	padding-left: 15px;
+.card-name {
+    font-size: 1.2rem;
+    color: #5d4037;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
 }
 
-.card-content p {
-	font-size: 1rem;
-	line-height: 1.6;
-	color: #555;
-	margin-bottom: 20px;
+.card-description {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #555;
+    margin-bottom: 20px;
 }
 
-/* リスト部分の装飾 */
-.product-list {
-	list-style: none;
-	padding: 0;
+/* おすすめ項目の装飾 */
+.card-footer {
+    background: #fcfaf5;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 0.85rem;
 }
 
-.product-list li {
-	position: relative;
-	padding-left: 1.5em;
-	margin-bottom: 12px;
-	font-size: 0.95rem;
-	line-height: 1.5;
+.target-label {
+    display: inline-block;
+    color: #8d6e63;
+    font-weight: bold;
+    font-size: 0.75rem;
+    margin-bottom: 5px;
 }
 
-.product-list li::before {
-	content: "・";
-	position: absolute;
-	left: 0;
-	color: #8b4513;
-	font-weight: bold;
-}
-
-.product-list strong {
-	color: #333;
-	display: block;
-	/* 項目名を強調するために改行させる */
-	margin-bottom: 2px;
+/* スマホ表示（縦に1つずつ並べる） */
+@media screen and (max-width: 768px) {
+    .koban-grid {
+        grid-template-columns: 1fr; /* 1列にする */
+    }
 }
